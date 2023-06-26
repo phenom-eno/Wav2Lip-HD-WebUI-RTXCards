@@ -1,3 +1,82 @@
+# **Wav2Lip Web UI**
+A Web UI using Gradio for Wav2Lip
+![wav2lip-ui](https://github.com/natlamir/Wav2Lip-WebUI/assets/137372478/ff7fd42f-e63b-4c8f-8109-a7668ab0adf0)
+I wanted to build the UI with gradio. However, gradio requires python 3.8 while wav2lip requires 3.6. I ended up creating 2 conda environments. One with 3.6 for wav2lip and one with 3.8 for gradio, then had the gradio call a cmd script with input parameters selected from the Web UI and the cmd script change to the wav2lip 3.6 environment and call inferency.py with the provided parameters.
+
+Video of the coding session where this was created: https://youtu.be/pYpcvArk_4U
+
+# **Installation on Windows**
+
+Open a conda prompt to a directory where you would like to install the wav2lip web ui.
+1. Create a conda environment for wav2lip
+   ```
+   conda create -n wav2lip python=3.6
+   ```
+2. Activate the environment
+   ```
+   conda activate wav2lip
+   ```
+3. Clone the repository
+   ```
+   git clone https://github.com/natlamir/Wav2Lip-WebUI.git
+   ```
+4. Go to the new folder
+   ```
+   cd Wav2Lip-WebUI
+   ```
+5. Install OpenCV
+   ```
+   conda install -c conda-forge opencv
+   ```
+6. Install Requirements
+   ```
+   pip install -r requirements.txt
+   ```
+7. Install PyTorch.
+   If you have a GPU / CUDA, you can use https://pytorch.org/get-started/locally/
+
+   For example:
+   ```
+   conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+   ```
+
+   If you don't have a GPU, you can install pytorch with:
+   ```
+   pip install torch
+   pip install torchvision
+   ```
+9. Now create other environment for the gradio app. First deactivate this one
+   ```
+   conda deactivate
+   ```
+10. Create the new environment for gradio
+    ```
+    conda create -n wav2lip-ui python=3.8
+    ```
+11. Activate the new evnrionment
+    ```
+    conda activate wav2lip-ui
+    ```
+12. Install gradio
+    ```
+    pip install gradio
+    ```
+Now you just need to open and modify the USERID.txt file and replace the YOUR_ID_HERE with your user id if you used the default installation path for anaconda. Anaconda should have installed to C:\Users\YOUR_ID_HERE\anaconda3
+
+*If you didn't use the default path or if your anaconda is installed on a different path, then you can find it by using `where conda`. Then you can modify the run.cmd and inference.cmd with the full path of where your conda is installed if it is not in the default location C:\Users\YOUR_ID_HERE\anaconda3*
+
+Remember to get the model and weights from below. With those things done, you should be able to double click the **run.cmd** to launch the Web UI.
+
+Make sure to download the pre-trained model and weights and place them in the appropriate directory:
+Pre-trained model (rename to s3fd.pth and place in `face_detection/detection/sfd` folder): 
+
+https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth
+
+Weights (place in `checkpoints` folder):
+
+1. https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/Eb3LEzbfuKlJiR600lQWRxgBIY27JZg80f7V9jtMfbNDaQ?e=TBFBVW
+2. https://iiitaphyd-my.sharepoint.com/:u:/g/personal/radrabha_m_research_iiit_ac_in/EdjI7bZlgApMqsVoEUUXpLsBxqXbn5z8VTmoxp55YNDcIA?e=n9ljGW
+
 # **Wav2Lip**: *Accurately Lip-syncing Videos In The Wild*
 
 For commercial requests, please contact us at radrabha.m@research.iiit.ac.in or prajwal.k@research.iiit.ac.in. We have an HD model ready that can be used commercially.
