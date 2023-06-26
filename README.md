@@ -4,6 +4,7 @@ A Web UI using Gradio for Wav2Lip
 I wanted to build the UI with gradio. However, gradio requires python 3.8 while wav2lip requires 3.6. I ended up creating 2 conda environments. One with 3.6 for wav2lip and one with 3.8 for gradio, then had the gradio call a cmd script with input parameters selected from the Web UI and the cmd script change to the wav2lip 3.6 environment and call inferency.py with the provided parameters.
 
 Video of the coding session where this was created: https://youtu.be/pYpcvArk_4U
+Quick video of the installation: https://youtu.be/n3G9MVR6OJY
 
 # **Installation on Windows**
 
