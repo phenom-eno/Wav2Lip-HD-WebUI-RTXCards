@@ -1,5 +1,4 @@
 import gradio as gr
-import webbrowser
 from subprocess import call
 
 with gr.Blocks() as ui:
@@ -34,5 +33,4 @@ with gr.Blocks() as ui:
         [video, audio, checkpoint, no_smooth, resize_factor, pad_top, pad_bottom, pad_left, pad_right], 
         result)
 
-webbrowser.open('http://localhost:7860/', new=2)
-ui.launch()   
+ui.launch(inbrowser=True)   
