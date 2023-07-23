@@ -34,7 +34,11 @@ Open a conda prompt to a directory where you would like to install the wav2lip w
    ```
    pip install -r requirements.txt
    ```
-7. Install PyTorch.
+7. Install ffmpeg
+   ```
+   conda install -c conda-forge ffmpeg
+   ```
+8. Install PyTorch.
    If you have a GPU / CUDA, you can use https://pytorch.org/get-started/locally/
 
    For example:
