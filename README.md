@@ -10,66 +10,14 @@ Quick video of the installation: https://youtu.be/n3G9MVR6OJY
 # **Installation on Windows**
 
 Open a conda prompt to a directory where you would like to install the wav2lip web ui.
-1. Create a conda environment for wav2lip
-   ```
-   conda create -n wav2lip python=3.6
-   ```
-2. Activate the environment
-   ```
-   conda activate wav2lip
-   ```
-3. Clone the repository
-   ```
-   git clone https://github.com/natlamir/Wav2Lip-WebUI.git
-   ```
-4. Go to the new folder
-   ```
-   cd Wav2Lip-WebUI
-   ```
-5. Install OpenCV
-   ```
-   conda install -c conda-forge opencv
-   ```
-6. Install Requirements
-   ```
-   pip install -r requirements.txt
-   ```
-7. Install ffmpeg
-   ```
-   conda install -c conda-forge ffmpeg
-   ```
-8. Install PyTorch.
-   If you have a GPU / CUDA, you can use https://pytorch.org/get-started/locally/
-
-   For example:
-   ```
-   conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-   ```
-
-   If you don't have a GPU, you can install pytorch with:
-   ```
-   pip install torch
-   pip install torchvision
-   ```
-9. Now create other environment for the gradio app. First deactivate this one
-   ```
-   conda deactivate
-   ```
-10. Create the new environment for gradio
-    ```
-    conda create -n wav2lip-ui python=3.8
-    ```
-11. Activate the new evnrionment
-    ```
-    conda activate wav2lip-ui
-    ```
-12. Install gradio
-    ```
-    pip install gradio
-    ```
-Now you just need to open and modify the USERID.txt file and replace the YOUR_ID_HERE with your user id if you used the default installation path for anaconda. Anaconda should have installed to C:\Users\YOUR_ID_HERE\anaconda3
-
-*If you didn't use the default path or if your anaconda is installed on a different path, then you can find it by using `where conda`. Then you can modify the run.cmd and inference.cmd with the full path of where your conda is installed if it is not in the default location C:\Users\YOUR_ID_HERE\anaconda3*
+```
+conda create -n wav2lip python=3.10
+conda activate wav2lip
+git clone https://github.com/natlamir/Wav2Lip-WebUI.git wav2lip
+cd wav2lip
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install -r requirements.txt
+```
 
 Remember to get the model and weights from below. With those things done, you should be able to double click the **run.cmd** to launch the Web UI.
 
