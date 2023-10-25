@@ -5,7 +5,7 @@ I wanted to build the UI with gradio. However, gradio requires python 3.8 while 
 
 Video of the coding session where this was created: https://youtu.be/pYpcvArk_4U
 
-Quick video of the installation: https://youtu.be/n3G9MVR6OJY
+Quick video of the installation: [https://youtu.be/n3G9MVR6OJY](https://youtu.be/w4PFot5csx0)
 
 # **Installation on Windows**
 
