@@ -3,3 +3,6 @@ numpy
 tqdm
 numba
 ffmpeg-python
+opencv-python
+gradio
+chardet
