@@ -1,8 +1,8 @@
-librosa
-numpy
-tqdm
-numba
-ffmpeg-python
-opencv-python
-gradio
-chardet
+librosa==0.10.1
+numpy==1.26.0
+tqdm==4.66.1
+numba==0.58.1
+ffmpeg-python==0.2.0
+opencv-python==4.8.1.78
+gradio==3.50.2
+chardet==5.2.0
